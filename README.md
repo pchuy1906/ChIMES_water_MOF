@@ -1,4 +1,4 @@
-These are the steps to iteratively fit a ChIMES model. The system in this example is Metal-Organic Framework with water adsorption.
+**These are the steps to iteratively fit a ChIMES model. The system in this example is Metal-Organic Framework with water adsorption.**
 1. Fit an initial ChIMES model
    cd T0/1-fit
    1. run ./do_1_submit_chimesLSQ.sh which will:
