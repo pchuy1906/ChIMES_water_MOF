@@ -17,5 +17,9 @@
  * Once the setup is complete, run the following script to submit MD simulation jobs using LAMMPS:
    <br> `./do_1_LAMMPS_MD.sh`
    <br> This script executes the LAMMPS calculations based on the prepared input files. Depending on the system size and computational resources available, the simulation may take some time to complete. Monitor the job queue if running on a cluster.
- * Run `./do_2_traj_LAMMPS_MD.sh` to convert LAMMPS dump format to xyz.
- * Run `./do_3_setup_DFTB.sh` to set up the computational method for reference data. It can be any level of theory that we want; in this case, it is density-functional tight-binding (DFTB).
+ * After completing the MD simulations, convert the output trajectory files from LAMMPS dump format to the widely used XYZ format for further analysis:
+   <br> `./do_2_traj_LAMMPS_MD.sh`
+   <br> This step ensures compatibility with various visualization and analysis tools, allowing easier inspection of atomic trajectories and structural evolution.
+ * To establish a reference dataset for the simulation, set up the computational method using Density-Functional Tight-Binding (DFTB):
+   <br> `./do_3_setup_DFTB.sh`
+   <br> While DFTB is used in this case, other levels of theory (such as Density Functional Theory (DFT) or higher-level quantum mechanical methods) can also be applied depending on the desired accuracy and computational cost. This step prepares the necessary input files for running reference calculations.
