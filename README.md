@@ -14,6 +14,8 @@
  * Execute the following script to generate input files for LAMMPS:
    <br> `./do_0_setup.sh`
    <br> The systems of interest and thermodynamic conditions (P,T) need to be set up here.
- * Once the setup is complete, run the following script to submit MD simulation jobs using LAMMPS: `./do_1_LAMMPS_MD.sh`
+ * Once the setup is complete, run the following script to submit MD simulation jobs using LAMMPS:
+   <br> `./do_1_LAMMPS_MD.sh`
+   <br> This script executes the LAMMPS calculations based on the prepared input files. Depending on the system size and computational resources available, the simulation may take some time to complete. Monitor the job queue if running on a cluster.
  * Run `./do_2_traj_LAMMPS_MD.sh` to convert LAMMPS dump format to xyz.
  * Run `./do_3_setup_DFTB.sh` to set up the computational method for reference data. It can be any level of theory that we want; in this case, it is density-functional tight-binding (DFTB).
