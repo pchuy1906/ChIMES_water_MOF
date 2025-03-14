@@ -28,7 +28,9 @@
    <br> `cd ../2-MD/`
  * Execute the following script to generate input files for LAMMPS:
    <br> `./do_0_setup.sh`
-   <br> The systems of interest and thermodynamic conditions (P,T) need to be set up here.
+   <br> This script initializes the LAMMPS simulation setup. Key parameters to define:
+    * Systems of interest: Atomic structure, molecular composition, and simulation box dimensions.
+    * Thermodynamic conditions: Specify pressure (P) and temperature (T) settings according to the simulation requirements.
  * Once the setup is complete, run the following script to submit MD simulation jobs using LAMMPS:
    <br> `./do_1_LAMMPS_MD.sh`
    <br> This script executes the LAMMPS calculations based on the prepared input files. Depending on the system size and computational resources available, the simulation may take some time to complete. Monitor the job queue if running on a cluster.
