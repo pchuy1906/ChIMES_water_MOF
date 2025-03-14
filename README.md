@@ -8,12 +8,21 @@
     <br> This script performs several essential tasks:
     * Generate file `fm_setup.in` - This input file is necessary for the `chimes_lsq` fitting procedure. It contains settings and data specifications required for fitting.
     * Submit `job1.sh`, which:
-      * Run `chimes_lsq` to generate matrix files
+      * Runs `chimes_lsq` to generate matrix files
          * `A.*.txt` - Represents the system matrix used in the least squares fitting.
          * `b.txt` – Contains the target values, such as reference energies and forces.
-      * Generate the weights (file `new_weight.dat`) to consider differences in energy and atomic forces.
-      * Submit `job2.01.sh` to perform the linear fit, which will start once `job1.sh` is completed. The solution will be saved in `x.txt`, and the predicted values can be found in `Ax.txt`, which can be directly compared to `b.txt`.
-  * Run `./do_2_grep.sh` to generate the ChIMES parameter file `ChIMES_params.txt`, which can be used for further calculations using LAMMPS/ChIMES_MD or ASE. It also creates files `data_energy.dat`, `data_force.dat`, and `data_stress.dat` for parity plots.  
+      * Generates `new_weight.dat`, which assigns appropriate weights to account for differences in energy and atomic forces.
+      * Submits `job2.01.sh` to perform linear fit once `job1.sh` completes. The solution will be saved in `x.txt`, and the predicted values can be found in `Ax.txt`, which can be directly compared to `b.txt` to assess the fitting accuracy.
+  * Once the fitting process is complete, run the following script to extract parameters and generate relevant output files:
+    <br> `./do_2_grep.sh`
+    <br> This script performs the following actions:
+     * Creates the ChIMES parameter file:
+       * `ChIMES_params.txt` – This file contains the fitted parameters that can be used in further molecular dynamics (MD) simulations with LAMMPS/ChIMES_MD or ASE.
+     * Generates data files for parity plot analysis:
+       * `data_energy.dat` – Contains reference and fitted energy values.
+       * data_force.dat – Stores atomic force comparisons.
+       * data_stress.dat – Provides stress tensor data.
+    <br> These files help evaluate the accuracy of the fitting by comparing predicted values to reference data.
 ## 2. Run MD simulation and compute single-point energy
  * Before starting, ensure that you are in the correct directory where the MD simulations will be executed. Use the following command to move into the appropriate folder:
    <br> `cd ../2-MD/`
