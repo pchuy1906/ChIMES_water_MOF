@@ -6,5 +6,5 @@
       * Generate file `fm_setup.in`, an input for chimes_lsq  
       * Submit job1.sh in order to
          * Run `chimes_lsq` to generate matrices `A.*.txt` and `b.txt`
-         * Generate the weight to consider differences in energy and atomic forces
+         * Generate the weights (file `new_weight.dat`) to consider differences in energy and atomic forces
       3. submit job2.sh that will start when job1.sh is done. job2.sh will do the linear fit. Solution is x.txt and the predicted values is in Ax.txt that can be compare directly to b.txt
