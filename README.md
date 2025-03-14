@@ -2,7 +2,7 @@
 ## 1.   Fit an initial ChIMES model
    * Go to the directory to fit:
      > cd T0/1-fit
-   * run ==./do_1_submit_chimesLSQ.sh== which will:
+   * run ==highlight==./do_1_submit_chimesLSQ.sh== which will:
       1. generate file fm_setup.in, input for chimes_lsq  
       2. submit job1.sh which
          1. run chimes_lsq to generate matrices A and b
