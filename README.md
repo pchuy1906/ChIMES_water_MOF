@@ -7,4 +7,4 @@
       * Submit job1.sh in order to
          * Run `chimes_lsq` to generate matrices `A.*.txt` and `b.txt`
          * Generate the weights (file `new_weight.dat`) to consider differences in energy and atomic forces
-      3. submit job2.sh that will start when job1.sh is done. job2.sh will do the linear fit. Solution is x.txt and the predicted values is in Ax.txt that can be compare directly to b.txt
+      * Submit `job2.01.sh` to do the linear fit that will start when `job1.sh` is done. Solution is `x.txt` and the predicted values is in `Ax.txt` that can be compare directly to `b.txt`
