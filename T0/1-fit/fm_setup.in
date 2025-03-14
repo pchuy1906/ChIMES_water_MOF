@@ -10,7 +10,7 @@ true
 # NLAYERS # ! x,y, and z supercells.. small unit cell should have >= 1
 1
 # FITSTRS #
-false
+FIRSTALL 126
 # FITENER # ! Fit ENERGY
 true
 # FITCOUL # ! Fit charges? If false, use user-specified fixed charges, and subtract them from the forces -- NOTE: FUNCTIONALITY CURRENTLY ONLY SUPPORTED FOR TRUE, AND FALSE WITH CHARGES = 0

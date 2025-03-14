@@ -1,14 +1,14 @@
 #!/bin/sh
 
-#SBATCH -N 4
+#SBATCH -N 1
 #SBATCH -J lsq2
 #SBATCH -t 01:00:00
 #SBATCH -p pdebug
 #SBATCH -A eci4hps
 #SBATCH --exclusive
 
-nnodes=4
-nMPI=224
+nnodes=1
+nMPI=36
 
 nrun=`ls dlars.*.log | wc | awk '{print $1}'`
 mv dlars.01.log dlars.${nrun}.log

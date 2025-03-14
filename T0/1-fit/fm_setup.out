@@ -10,7 +10,7 @@ Input file contents successfully stored.
 	# NFRAMES #: 126
 	# NLAYERS #: 1
 	# FITCOUL #: false
-	# FITSTRS #: false
+	# FITSTRS #: true ...will fit to all tensor components ...will only fit tensors for first 126 frames.
 	# FITENER #: true
 	# PAIRTYP #: CHEBYSHEV ....NOTE: Forces reported in units of kcal/(mol.A), potential energy in kcal/mol.
 	             Will use 2-body order: 12

@@ -26,4 +26,4 @@ for quant in force energy stress ; do
     grep -e "${quant}" data_fit.dat > data_${quant}.dat
 done
 
-~/tools/others/do_clean_ChIMES_LSQ.sh
+../../scripts/do_clean_ChIMES_LSQ.sh

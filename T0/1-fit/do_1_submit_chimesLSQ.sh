@@ -1,11 +1,11 @@
-module load python/2.7.18
+module load python/3.12.2
 
 file_xyz="../0-data/DFTB.xyz"
 atom_types="Al C H N O"
 polynomial_orders="12 8 0"
 cutoff_distances="6 5 4"
 
-python ~/tools/others/gen_fm_setup.py \
+python ../../scripts/gen_fm_setup.py \
 --file_xyz ${file_xyz}  \
 --atom_types ${atom_types}  \
 --polynomial_orders ${polynomial_orders}  \

@@ -1,24 +1,24 @@
-#!/bin/sh
-
-src_chimes_lsq="/p/lustre2/pham20/codes/ChIMES_2025_develop/chimes_lsq/"
-
 nnodes=1
 nMPI=36
-exe="${src_chimes_lsq}/build/chimes_lsq"
-date
-#srun -N $nnodes -n $nMPI $exe  fm_setup.in >& fm_setup.out
-date
 
-nAtomType=5
-nCondensed=0
-file_xyzf=`grep -A1 TRJFILE fm_setup.in | tail -1 | awk '{print $1}'`
-wE=200
-wS=500
+nall=7000
+neach=2500
+nrun=$(($nall/$neach))
 
-python ~/tools/others/read_frame_info/read_frame_info2.py \
---nAtomType    $nAtomType \
---nCondensed   $nCondensed \
---wE           $wE \
---wS           $wS
+sed -i 's/.*#SBATCH -N.*/#SBATCH -N '"$nnodes"'/' job*.sh
+sed -i 's/.*nnodes=.*/nnodes='"$nnodes"'/'        job*.sh
+sed -i 's/.*nMPI=.*/nMPI='"$nMPI"'/'              job*.sh
+sed -i 's/.*max_iter=.*/max_iter='"$nall"'/'      job*.sh
 
-paste b.txt  new_weight.dat   label.txt  | grep force > AAA_force_weight.dat
+sbatch job1.sh &> JOB_ID
+JOBID=`tail -1 JOB_ID | awk '{print $NF}'`
+sbatch --dependency=afterany:$JOBID job2.01.sh &> JOB_ID_1
+
+#for i in $(seq 2 2) ; do
+#    prev=$(($i-1))
+#    nstep=$(($i*$neach))
+#    JOBID=`tail -1 JOB_ID_${prev} | awk '{print $NF}'`
+#    nfile="TMP_${i}.sh"
+#    cp job3.sh $nfile
+#    sbatch --dependency=afterany:$JOBID $nfile &> JOB_ID_$i
+#done
