@@ -10,3 +10,5 @@
   * Run `./do_2_grep.sh` to generate the ChIMES parameter file `ChIMES_params.txt`, which can be used for further calculations using LAMMPS/ChIMES_MD or ASE. It also creates files `data_energy.dat`, `data_force.dat`, and `data_stress.dat` for parity plots.  
 ## 2. Run MD simulation
  * Go to the directory to run MD simulations: `cd ../2-MD/`
+ * Run `./do_0_setup.sh` to set up LAMMPS input files. The systems of interest and thermodynamic conditions (P,T) needs to set up here.
+ * Run `./do_1_LAMMPS_MD.sh` to submit jobs for LAMMPS calculations.
