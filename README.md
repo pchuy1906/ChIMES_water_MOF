@@ -12,3 +12,5 @@
  * Go to the directory to run MD simulations: `cd ../2-MD/`
  * Run `./do_0_setup.sh` to set up LAMMPS input files. The systems of interest and thermodynamic conditions (P,T) needs to set up here.
  * Run `./do_1_LAMMPS_MD.sh` to submit jobs for LAMMPS calculations.
+ * Run `./do_2_traj_LAMMPS_MD.sh` to convert LAMMPS dump format to xyz.
+ * Run `do_3_setup_DFTB.sh` to set up computational method for referene data. It can be any level of theory that we want, in this case it is density-functional tight-binding DFTB
