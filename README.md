@@ -22,7 +22,7 @@
        * `data_energy.dat` – Contains reference and fitted energy values.
        * data_force.dat – Stores atomic force comparisons.
        * data_stress.dat – Provides stress tensor data.
-    These files help evaluate the accuracy of the fitting by comparing predicted values to reference data.
+    <br> These files help evaluate the accuracy of the fitting by comparing predicted values to reference data.
 ## 2. Run MD simulation and compute single-point energy
  * Before starting, ensure that you are in the correct directory where the MD simulations will be executed. Use the following command to move into the appropriate folder:
    <br> `cd ../2-MD/`
