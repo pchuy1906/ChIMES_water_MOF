@@ -20,8 +20,8 @@
        * `ChIMES_params.txt` – This file contains the fitted parameters that can be used in further molecular dynamics (MD) simulations with LAMMPS/ChIMES_MD or ASE.
      * Generates data files for parity plot analysis:
        * `data_energy.dat` – Contains reference and fitted energy values.
-       * data_force.dat – Stores atomic force comparisons.
-       * data_stress.dat – Provides stress tensor data.
+       * `data_force.dat` – Stores atomic force comparisons.
+       * `data_stress.dat` – Provides stress tensor data.
     <br> These files help evaluate the accuracy of the fitting by comparing predicted values to reference data.
 ## 2. Run MD simulation and compute single-point energy
  * Before starting, ensure that you are in the correct directory where the MD simulations will be executed. Use the following command to move into the appropriate folder:
@@ -40,3 +40,9 @@
  * To establish a reference dataset for the simulation, set up the computational method using Density-Functional Tight-Binding (DFTB):
    <br> `./do_3_setup_DFTB.sh`
    <br> While DFTB is used in this case, other levels of theory (such as Density Functional Theory (DFT) or higher-level quantum mechanical methods) can also be applied depending on the desired accuracy and computational cost. This step prepares the necessary input files for running reference calculations.
+ * Once the DFTB setup is complete, submit the job for execution:
+   <br> `./do_4_submit_DFTB.sh`
+   <br> DFTB calculations may take a while to complete, depending on the system size and computational resources. If running on a computing cluster, track the job status to ensure proper execution.
+ * After the DFTB job completes, gather the results into a file suitable for ChIMES least squares fitting:
+   <br> `./do_5_collect_DFTB.sh`
+   <br> This step compiles the reference data, ensuring it is formatted correctly for subsequent fitting procedures. The collected data will be used in the ChIMES fitting process to generate accurate interatomic potentials.
